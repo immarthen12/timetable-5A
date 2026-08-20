@@ -1,5 +1,251 @@
 <!DOCTYPE html>
 <html lang="id">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jadwal Kuliah Semester 7</title>
+
+    <!-- Icon website -->
+    <link rel="icon" href="./tarbiyatunnisa.png">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- CSS kita sendiri -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         HEADER / HERO
+    ========================================== -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <!-- Foto kelas -->
+            <div class="photo-container">
+                <img
+                    src="./foto-kelas.jpeg"
+                    alt="Foto Kelas 6A"
+                    class="class-photo"
+                >
+            </div>
+
+            <!-- Informasi kelas -->
+            <div class="class-info">
+
+                <span class="badge">
+                    <i class="bi bi-mortarboard-fill"></i>
+                    STIT TARBIYATUNNISA
+                </span>
+
+                <h1>
+                    Kelas <span>6A</span>
+                </h1>
+
+                <p>
+                    Sistem Jadwal Perkuliahan
+                </p>
+
+                <!-- Jam realtime -->
+                <div class="clock-box">
+
+                    <div id="clock">
+                        00:00:00
+                    </div>
+
+                    <div id="date">
+                        Memuat tanggal...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main>
+
+        <!-- =====================================
+             STATUS PERKULIAHAN
+        ====================================== -->
+
+        <section class="status-card">
+
+            <div>
+
+                <span class="label">
+                    STATUS PERKULIAHAN
+                </span>
+
+                <h2 id="status">
+                    Memuat jadwal...
+                </h2>
+
+            </div>
+
+            <div id="countdown">
+                Memuat...
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             LIVE CLASS
+        ====================================== -->
+
+        <section
+            id="liveCard"
+            class="live-card"
+        >
+
+            <div class="live-header">
+
+                <span class="live-badge">
+                    <span class="live-dot"></span>
+                    SEDANG BERLANGSUNG
+                </span>
+
+                <span id="livePercent">
+                    0%
+                </span>
+
+            </div>
+
+            <h2 id="liveSubject">
+                -
+            </h2>
+
+            <p id="liveLecturer">
+                -
+            </p>
+
+            <!-- Progress bar -->
+            <div class="progress-container">
+
+                <div
+                    id="progressBar"
+                    class="progress-bar"
+                ></div>
+
+            </div>
+
+            <div class="progress-info">
+
+                <span id="liveStart">
+                    00:00
+                </span>
+
+                <span id="liveRemaining">
+                    -
+                </span>
+
+                <span id="liveEnd">
+                    00:00
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             JADWAL UTAMA
+        ====================================== -->
+
+        <section class="schedule-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="label">
+                        JADWAL UTAMA
+                    </span>
+
+                    <h2>
+                        Preview Perkuliahan
+                    </h2>
+
+                </div>
+
+                <span id="cycleBadge" class="cycle-badge">
+                    Siklus A
+                </span>
+
+            </div>
+
+
+            <!-- JavaScript akan memasukkan
+                 tabel jadwal ke sini -->
+
+            <div id="scheduleContainer"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Semester 6A
+        </p>
+
+        <a
+            href="https://www.instagram.com/6a_stit_tn/"
+            target="_blank"
+        >
+            <i class="bi bi-instagram"></i>
+            Instagram Kelas
+        </a>
+
+        <a
+            href="https://www.instagram.com/imrizkymaulana/"
+            target="_blank"
+        >
+            <i class="bi bi-person-circle"></i>
+            Design By Class 6-A
+        </a>
+
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+<!-- BACK UP-DATA //
+<!DOCTYPE html>
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -229,4 +475,4 @@
 
 
 
-
+ -->
