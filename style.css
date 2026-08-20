@@ -1,0 +1,785 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   VARIABLE WARNA
+========================================= */
+
+:root {
+
+    --green: #2ebf91;
+    --green-dark: #159a76;
+
+    --dark: #111827;
+
+    --white: #ffffff;
+
+    --gray: #6b7280;
+
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    color: #1f2937;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #8360c3,
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 90% 90%,
+            #2ebf91,
+            transparent 35%
+        ),
+
+        #111827;
+
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+
+    padding: 35px 20px 25px;
+
+}
+
+
+.hero-content {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+    color: white;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.12);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.3);
+
+}
+
+
+/* =========================================
+   FOTO KELAS
+========================================= */
+
+.photo-container {
+
+    width: 45%;
+
+}
+
+
+.class-photo {
+
+    width: 100%;
+
+    height: 280px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    border: 4px solid white;
+
+}
+
+
+/* =========================================
+   INFORMASI KELAS
+========================================= */
+
+.class-info {
+
+    flex: 1;
+
+}
+
+
+.badge {
+
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.15);
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.class-info h1 {
+
+    font-size: 70px;
+
+    margin: 18px 0 10px;
+
+}
+
+
+.class-info h1 span {
+
+    color: #5ee7c0;
+
+}
+
+
+.class-info p {
+
+    opacity: 0.8;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================================
+   JAM
+========================================= */
+
+.clock-box {
+
+    display: inline-block;
+
+    padding: 15px 20px;
+
+    border-radius: 18px;
+
+    background: rgba(0,0,0,0.25);
+
+}
+
+
+#clock {
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+#date {
+
+    font-size: 14px;
+
+    opacity: 0.8;
+
+    margin-top: 5px;
+
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+main {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 0 20px 50px;
+
+}
+
+
+/* =========================================
+   STATUS CARD
+========================================= */
+
+.status-card {
+
+    margin-bottom: 25px;
+
+    padding: 22px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.2);
+
+}
+
+
+.label {
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    color: #8b95a1;
+
+}
+
+
+#status {
+
+    margin-top: 5px;
+
+    font-size: 20px;
+
+}
+
+
+#countdown {
+
+    color: var(--green-dark);
+
+    font-weight: bold;
+
+    text-align: right;
+
+}
+
+
+/* =========================================
+   LIVE CLASS
+========================================= */
+
+.live-card {
+
+    display: none;
+
+    margin-bottom: 30px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.2);
+
+}
+
+
+.live-card.show {
+
+    display: block;
+
+}
+
+
+.live-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+}
+
+
+.live-badge {
+
+    color: var(--green-dark);
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+.live-dot {
+
+    display: inline-block;
+
+    width: 9px;
+
+    height: 9px;
+
+    margin-right: 6px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+}
+
+
+#liveSubject {
+
+    margin: 10px 0;
+
+    font-size: 25px;
+
+}
+
+
+#liveLecturer {
+
+    color: var(--gray);
+
+}
+
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+
+.progress-container {
+
+    height: 11px;
+
+    margin-top: 20px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #e5e7eb;
+
+}
+
+
+.progress-bar {
+
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        90deg,
+        var(--green),
+        #64e8c2
+    );
+
+    transition: width 1s linear;
+
+}
+
+
+.progress-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 8px;
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin: 30px 0 15px;
+
+    color: white;
+
+}
+
+
+.section-heading h2 {
+
+    margin-top: 5px;
+
+}
+
+
+.cycle-badge {
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    background: rgba(255,255,255,0.15);
+
+}
+
+
+/* =========================================
+   WEEK CARD
+========================================= */
+
+.week {
+
+    margin-bottom: 25px;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background: white;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.2);
+
+}
+
+
+.week-header {
+
+    padding: 18px 22px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--green),
+            var(--green-dark)
+        );
+
+}
+
+
+.week-header h3 {
+
+    margin-bottom: 5px;
+
+}
+
+
+.week-header span {
+
+    font-size: 12px;
+
+    opacity: 0.9;
+
+}
+
+
+/* =========================================
+   HARI
+========================================= */
+
+.day {
+
+    border-bottom: 1px solid #eee;
+
+}
+
+
+.day:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.day.today {
+
+    background: #f0fff9;
+
+}
+
+
+.day-header {
+
+    padding: 15px 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    background: #f7faf9;
+
+}
+
+
+.day.today .day-header {
+
+    background: #e5fff5;
+
+}
+
+
+.today-badge {
+
+    display: none;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    color: white;
+
+    background: var(--green);
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+}
+
+
+.day.today .today-badge {
+
+    display: inline-block;
+
+}
+
+
+/* =========================================
+   BARIS JADWAL
+========================================= */
+
+.schedule {
+
+    padding: 5px 10px;
+
+}
+
+
+.row {
+
+    display: grid;
+
+    grid-template-columns:
+        150px
+        1fr
+        270px;
+
+    gap: 18px;
+
+    padding: 16px 10px;
+
+    align-items: center;
+
+    border-bottom: 1px solid #eee;
+
+    transition: 0.2s;
+
+}
+
+
+.row:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.row:hover {
+
+    background: #f5fffb;
+
+    transform: translateX(3px);
+
+}
+
+
+.row.active {
+
+    border-left: 5px solid var(--green);
+
+    border-radius: 10px;
+
+    background: #e5fff5;
+
+}
+
+
+.time {
+
+    color: var(--green-dark);
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+
+.subject {
+
+    font-weight: bold;
+
+}
+
+
+.lecturer {
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   ISTIRAHAT
+========================================= */
+
+.row.break {
+
+    background: #fff9e7;
+
+}
+
+
+.row.break .time {
+
+    color: #a06f00;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: white;
+
+    background: rgba(0,0,0,0.5);
+
+}
+
+
+footer p {
+
+    margin: 8px;
+
+}
+
+
+footer a {
+
+    margin: 0 8px;
+
+    color: #5ee7c0;
+
+    text-decoration: none;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 760px) {
+
+    .hero-content {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    .photo-container {
+
+        width: 100%;
+
+    }
+
+
+    .class-info h1 {
+
+        font-size: 55px;
+
+    }
+
+
+    .status-card {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    #countdown {
+
+        text-align: center;
+
+    }
+
+
+    .row {
+
+        grid-template-columns: 1fr;
+
+        gap: 6px;
+
+    }
+
+}
