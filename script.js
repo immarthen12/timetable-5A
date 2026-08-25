@@ -6,20 +6,20 @@
 /*
     Tanggal ini menjadi titik awal sistem.
 
-    5 September 2026
+    12 September 2026
     = Siklus A
 
-    12 September
+    19 September
     = Siklus B
 
-    19 September
+    26 September
     = Siklus A
 
     dst...
 */
 
 const referenceDate = new Date(
-    "2026-09-05T00:00:00+07:00"
+    "2026-09-02T00:00:00+07:00"
 );
 
 
@@ -985,12 +985,145 @@ function updateLiveClass() {
         document.getElementById(
             "status"
         ).textContent =
-            "🎓 Tidak ada kelas yang sedang berlangsung";
+            "🎓 Lagi Gada Kelas, Cek Lagi Nanti Sabtu/Minggu";
 
     }
 
 }
 
+/* =================================================
+   12. COUNTDOWN MENUJU / SELAMA PERKULIAHAN
+================================================= */
+
+function updateCountdown() {
+
+    const today = getToday();
+
+    const schedules = getSchedule(today);
+
+    const currentMinutes = getCurrentMinutes();
+
+    let nextClass = null;
+    let activeClass = null;
+
+
+    /*
+        Cari kelas yang sedang berlangsung
+        atau kelas berikutnya hari ini
+    */
+
+    schedules.forEach(item => {
+
+        if (item.break) {
+            return;
+        }
+
+
+        const start =
+            timeToMinutes(item.start);
+
+        const end =
+            timeToMinutes(item.end);
+
+
+        /*
+            Kalau sekarang berada
+            di antara jam mulai dan selesai
+        */
+
+        if (
+            currentMinutes >= start &&
+            currentMinutes < end
+        ) {
+
+            activeClass = item;
+
+        }
+
+
+        /*
+            Kalau kelas belum dimulai,
+            jadikan sebagai kelas berikutnya
+        */
+
+        if (
+            currentMinutes < start &&
+            nextClass === null
+        ) {
+
+            nextClass = item;
+
+        }
+
+    });
+
+
+    const countdown =
+        document.getElementById("countdown");
+
+
+    /*
+        =========================================
+        KALAU SEDANG ADA KELAS
+        =========================================
+    */
+
+    if (activeClass) {
+
+        const end =
+            timeToMinutes(
+                activeClass.end
+            );
+
+
+        const remainingMinutes =
+            end - currentMinutes;
+
+
+        countdown.textContent =
+            `⏳ ${remainingMinutes} menit lagi`;
+
+        return;
+
+    }
+
+
+    /*
+        =========================================
+        KALAU ADA KELAS BERIKUTNYA HARI INI
+        =========================================
+    */
+
+    if (nextClass) {
+
+        const start =
+            timeToMinutes(
+                nextClass.start
+            );
+
+
+        const remainingMinutes =
+            start - currentMinutes;
+
+
+        countdown.textContent =
+            `⏰ ${remainingMinutes} menit menuju ${nextClass.subject}`;
+
+        return;
+
+    }
+
+
+    /*
+        =========================================
+        KALAU SUDAH TIDAK ADA KELAS HARI INI
+        =========================================
+    */
+
+    countdown.textContent =
+        "🎓 Tidak ada kelas lagi hari ini";
+
+}
 
 /* =================================================
    12. PROGRAM UTAMA
